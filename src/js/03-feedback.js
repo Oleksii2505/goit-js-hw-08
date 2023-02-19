@@ -20,14 +20,14 @@ function onFormSubmit(event) {
 
 function onInput(event) {
   formData[event.target.name] = event.target.value;
-  return localStorage.setItem('STORAGE_KEY', JSON.stringify(formData));
+  return localStorage.setItem(STORAGE_KEY, JSON.stringify(formData));
 }
 
 function populateFormInput() {
   if (parsedData) {
-    const formKeys = Object.keys(parseData);
+    const formKeys = Object.keys(parsedData);
     formKeys.map(element => {
-      document.querySelector(`[name='${element}']`).value = parseData[element];
+      document.querySelector(`[name='${element}']`).value = parsedData[element];
     });
   }
 }
