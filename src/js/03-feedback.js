@@ -31,7 +31,9 @@ function populateFormInput() {
   const parsedData = localStorage.getItem(STORAGE_KEY);
   if (parsedData) {
     const formKeys = JSON.parse(parsedData);
-    if (formKeys.email !== undefined) refs.input.value = formKeys.email;
-    if (formKeys.message !== undefined) refs.textarea.value = formKeys.message;
+    refs.input.value = formKeys.email || '';
+    refs.textarea.value = formKeys.message || '';
+    formData.email = formKeys.email || '';
+    formData.message = formKeys.message || '';
   }
 }
